@@ -73,7 +73,7 @@ $(function() {
         });
 
         it('has at least a single .entry element within .feed container', function() {
-            expect($('.feed .entry').length).not.toBeGreaterThan(0);
+            expect($('.feed .entry').length).not.toBeGreaterThan(1);
         })
 
 
