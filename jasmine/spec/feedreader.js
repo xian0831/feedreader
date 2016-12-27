@@ -82,22 +82,19 @@ $(function() {
     describe('New Feed Selection', function() {
         var initFeed;
         var loadedFeed;
+
         beforeEach(function(done){
             loadFeed(0, function() {
                 initFeed = $('.feed').html();
-                done();
+                loadFeed(1, function() {
+                    loadedFeed = $('.feed').html();
+                    done();
+                })
             })
 
         });
 
-        beforeEach(function(done){
-            loadFeed(1, function() {
-                loadedFeed = $('.feed').html();
-                done();
-            })
-        });
-
-        it('changed content when loadFeed function is called', function(){
+        it('changed content when loadFeed function is called', function(done){
             expect(initFeed).not.toEqual(loadedFeed);
         });
     })
